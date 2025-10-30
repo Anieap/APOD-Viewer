@@ -70,8 +70,8 @@ struct SettingsView: View {
             HStack {
                 Spacer()
                 Text("App Version: \(viewModel.getAppVersion())")
-                    .foregroundColor(.gray)
-                    .font(.footnote)
+                    .foregroundColor(AppColors.gray)
+                    .font(AppFonts.footnote)
                 Spacer()
             }
         }

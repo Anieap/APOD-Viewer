@@ -32,14 +32,14 @@ struct DatePickerView: View {
         } label: {
             HStack {
                 Text("\(title): \(selectedDate.formatted(dateFormat))")
-                    .foregroundColor(.primary)
+                    .foregroundColor(AppColors.primary)
                 Spacer()
                 Image(systemName: "calendar")
             }
             .padding()
             .background(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.gray.opacity(0.5))
+                    .stroke(AppColors.gray.opacity(0.5))
             )
         }
     }

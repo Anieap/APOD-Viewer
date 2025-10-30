@@ -16,8 +16,8 @@ struct AboutUsView: View {
         ScrollView {
             VStack {
                 Text(self.viewModel.description())
-                .font(.body)
-                .foregroundColor(.secondary)
+                .font(AppFonts.body)
+                .foregroundColor(AppColors.secondary)
 
                 Spacer()
             }

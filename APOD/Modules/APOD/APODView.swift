@@ -44,12 +44,12 @@ struct APODView: View {
     
     private var title: some View {
         Text(viewModel.model?.title ?? "")
-            .font(.title2.bold())
+            .font(AppFonts.title2.bold())
     }
     
     private var explanation: some View {
         Text(viewModel.model?.explanation ?? "")
-            .font(.body)
+            .font(AppFonts.body)
             .multilineTextAlignment(.center)
     }
     
@@ -66,11 +66,11 @@ struct APODView: View {
                 .resizable()
                 .scaledToFit()
                 .frame(width: 60, height: 60)
-                .foregroundColor(.red)
+                .foregroundColor(AppColors.red)
             
             Text(viewModel.error)
-                .foregroundColor(.red)
-                .font(.headline)
+                .foregroundColor(AppColors.red)
+                .font(AppFonts.headline)
                 .padding(.horizontal)
         }
         .padding(.vertical)
@@ -96,7 +96,7 @@ struct APODView: View {
             WebVideoView(url: url)
                 .frame(height: 300)
                 .border(.gray)
-                .padding(.bottom, 8)
+                .padding(.bottom)
         } else {
             self.placeholder
         }
