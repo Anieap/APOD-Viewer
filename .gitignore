@@ -1,0 +1,75 @@
+# Xcode
+DerivedData/
+build/
+*.moved-aside
+*.xcuserstate
+*.xcscmblueprint
+*.xccheckout
+*.xcworkspace/xcuserdata/
+*.xcuserdatad/
+*.swp
+
+# Swift Package Manager
+/.build/
+/Packages/
+/.swiftpm/xcode/package.xcworkspace/xcuserdata/
+
+# CocoaPods
+Pods/
+Podfile.lock
+
+# Carthage
+Carthage/Build/
+
+# Fastlane
+fastlane/report.xml
+fastlane/Preview.html
+fastlane/screenshots/**/*.png
+fastlane/test_output
+
+# Config files and secrets
+Config.xcconfig
+.env
+*.plist
+
+# macOS system files
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# User-specific Xcode files
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+
+# Symbolicated crash logs
+*.dSYM.zip
+*.dSYM
+
+# Playgrounds
+timeline.xctimeline
+playground.xcworkspace
+
+# Swift playground shared data
+playground.xcuserdatad
+
+# Swift Package Manager artifacts
+.swiftpm/
+Package.resolved
+
+# Archive files
+*.xcarchive
+
+# iOS device logs
+*.mobileprovision
+*.ipa
+
+# Temporary files
+*.tmp
+*.log
+
+# Other system files
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+
