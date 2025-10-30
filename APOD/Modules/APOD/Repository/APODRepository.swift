@@ -38,7 +38,7 @@ final class APODRepository: APODRepositoryProtocol {
                     - Use `MockAPODService`, which loads sample data from a local JSON file, or
                     - Create your own mock data and inject it here.
             */
-            let model = try await MockAPODService().fetchAPOD(for: date)
+            let model = try await apodService.fetchAPOD(for: date)
             await self.cache.save(model, for: "last_apod")
             return model
         } catch {
