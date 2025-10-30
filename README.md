@@ -26,8 +26,7 @@
 
 ## 🔧 Improvements
 
-- 📱 Add **iPad support** for a better experience on larger screens  
-- 🎨 **Centralize fonts and colors** in one place for consistency and easier theming  
+- 📱 Add **iPad support** for a better experience on larger screens 
 - ⏳ Implement **video loading indicators** and **caching** for smoother playback  
 - 🖌️ **UI enhancements** to improve layout, spacing, and overall user experience
 
