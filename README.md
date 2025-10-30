@@ -27,6 +27,7 @@
 ## 🔧 Improvements
 
 - 📱 Add **iPad support** for a better experience on larger screens 
+- 🎨 Define **Constants (Spacing, Corner radius)** in one place for consistency
 - ⏳ Implement **video loading indicators** and **caching** for smoother playback  
 - 🖌️ **UI enhancements** to improve layout, spacing, and overall user experience
 

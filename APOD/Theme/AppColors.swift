@@ -11,7 +11,6 @@ struct AppColors {
     static let primary = Color.primary
     static let secondary = Color.secondary
     
-
     static let red = Color.red
     static let gray = Color(.systemGray)
 }

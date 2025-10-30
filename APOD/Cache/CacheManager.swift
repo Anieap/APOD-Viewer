@@ -32,6 +32,14 @@ final class CacheManager: Cacheable {
         return directory
     }()
     
+    /// Saves an `Encodable` object to disk using the provided cache key.
+    ///
+    /// This method encodes the object into JSON and writes it atomically
+    /// to the app’s cache directory.
+    ///
+    /// - Parameters:
+    ///   - object: The object to save.
+    ///   - key: The unique cache key.
     func save<T: Encodable>(_ object: T, for key: String) async {
         let fileURL = baseDirectory.appendingPathComponent(safeFileName(for: key))
 
@@ -45,6 +53,12 @@ final class CacheManager: Cacheable {
         }
     }
     
+    /// Loads and decodes a cached object for the given key.
+    ///
+    /// - Parameters:
+    ///   - type: The expected type of the object to decode.
+    ///   - key: The unique cache key.
+    /// - Returns: The decoded object, or `nil` if the file doesn’t exist or decoding fails.
     func load<T: Decodable>(_ type: T.Type, for key: String) async -> T? {
         let fileURL = baseDirectory.appendingPathComponent(safeFileName(for: key))
         guard self.fileManager.fileExists(atPath: fileURL.path) else { return nil }
@@ -61,6 +75,8 @@ final class CacheManager: Cacheable {
         }.value
     }
     
+    /// Removes all cached objects from the cache directory.
+    /// This method runs asynchronously and ignores errors from individual deletions.
     func clear() async {
         await Task.detached {
             guard let files = try? self.fileManager.contentsOfDirectory(at: self.baseDirectory) else { return }
@@ -70,6 +86,11 @@ final class CacheManager: Cacheable {
         }.value
     }
     
+    /// Returns a file-safe name for the provided cache key by replacing
+    /// invalid filename characters with underscores.
+    ///
+    /// - Parameter key: The original cache key.
+    /// - Returns: A sanitized filename string safe for disk storage.
     private func safeFileName(for key: String) -> String {
         let allowedCharacters = CharacterSet.alphanumerics.union(CharacterSet(charactersIn: "._-"))
         let safeString = key.unicodeScalars.map { allowedCharacters.contains($0) ? String($0) : "_" }.joined()

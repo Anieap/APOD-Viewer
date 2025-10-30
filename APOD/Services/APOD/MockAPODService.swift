@@ -4,6 +4,11 @@
 //
 //  Created by Anie Parameswaran on 26/10/2025.
 //
+//  ⚠️ Note:
+//  The APOD API is currently unavailable, so live data cannot be fetched at this time.
+//  To preview the final output with data, `MockAPODService` loads sample responses
+//  from a local JSON file (`apod_mock.json`). This mock will be removed once
+//  the live APOD API is back online.
 
 import Foundation
 
